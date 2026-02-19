@@ -1,7 +1,6 @@
 # 🧠 RAG Smart Contract Assistant
 
 A Retrieval-Augmented Generation (RAG) system for:
-
 - 📄 Uploading and processing PDF documents
 - 📑 Summarizing documents
 - 💬 Asking questions with chat history
@@ -11,48 +10,58 @@ A Retrieval-Augmented Generation (RAG) system for:
 
 ---
 
-# 📁 Project Structure
-
+## 📁 Project Structure
+```text
 rag_project/
 │
 ├── app/
-│ └── langserve_backend.py # LangServe backend API
+│   └── langserve_backend.py   # LangServe backend API
 │
 ├── rag/
-│ ├── init.py
-│ ├── loader.py # PDF loading
-│ ├── chunker.py # LLM-based chunking
-│ ├── embeddings.py # Embeddings
-│ ├── vectorstore.py # FAISS creation
-│ ├── chains.py # QA & Summarization chains
-│ └── config.py # Environment configuration
+│   ├── __init__.py
+│   ├── loader.py              # PDF loading
+│   ├── chunker.py             # LLM-based chunking
+│   ├── embeddings.py          # Embeddings
+│   ├── vectorstore.py         # FAISS creation
+│   ├── chains.py              # QA & Summarization chains
+│   └── config.py              # Environment configuration
 │
-├── .env # API Keys (NOT pushed to GitHub)
+├── .env                       # API Keys (NOT pushed to GitHub)
 ├── .gitignore
-├── ui_gradio_stream.py # Gradio UI (Frontend)
+├── ui_gradio_stream.py        # Gradio UI (Frontend)
 ├── prompt.py
 ├── requirements.txt
 └── README.md
-
+```
 
 ---
 
-# ⚙️ Setup Instructions
+## ⚙️ Setup Instructions
 
-## 1️⃣ Clone Repository
-
+### 1️⃣ Clone Repository
 ```bash
 git clone https://github.com/your-username/rag-smart-contract-assistant.git
 cd rag-smart-contract-assistant
 ```
-## 2️⃣ Create Virtual Environment
-### python -m venv .venv
-### Activate it in Windows:
-#### .venv\Scripts\activate
-## 3️⃣ Install Dependencies
-#### pip install -r requirements.txt
-## pip install -r requirements.txt
-## 4️⃣ Create a file named .env in the root directory and add:
+
+### 2️⃣ Create Virtual Environment
+```bash
+python -m venv .venv
+```
+
+Activate it on Windows:
+```bash
+.venv\Scripts\activate
+```
+
+### 3️⃣ Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 4️⃣ Configure Environment
+
+Create a file named `.env` in the root directory and add:
 ```bash
 OPENAI_API_KEY=your_openrouter_key_here
 OPENAI_BASE_URL=https://openrouter.ai/api/v1
@@ -60,42 +69,49 @@ MODEL_NAME=openai/gpt-4o-mini
 EMBEDDING_MODEL=text-embedding-3-small
 TOP_K=5
 ```
-# 🚀 Running the Application
-## 🔹 Step 1: Start Backend (LangServe)
-### python rag/serve.py
-## 🔹 Step 2: Start Frontend (Gradio)
-## Open a new terminal and run:
-### python app/gradio_frontend.py
 
-# 🧪 How to Use
+---
 
-## Upload a PDF
+## 🚀 Running the Application
 
-## Click "Process PDF"
+### 🔹 Step 1: Start Backend (LangServe)
+```bash
+python rag/serve.py
+```
 
-## Click "Summarize Document" to get summary
+### 🔹 Step 2: Start Frontend (Gradio)
 
-## Ask questions in chatbox
+Open a new terminal and run:
+```bash
+python app/gradio_frontend.py
+```
+
+---
+
+## 🧪 How to Use
+
+1. Upload a PDF
+2. Click **"Process PDF"**
+3. Click **"Summarize Document"** to get a summary
+4. Ask questions in the chatbox
+
+---
 
 ## 🔎 Backend API Endpoints
 
-| Method | Endpoint    | Description  |
-| ------ | ----------- | ------------ |
-| POST   | /upload_pdf | Process PDF  |
-| GET    | /summarize  | Get summary  |
-| POST   | /ask        | Ask question |
+| Method | Endpoint     | Description  |
+|--------|--------------|--------------|
+| POST   | /upload_pdf  | Process PDF  |
+| GET    | /summarize   | Get summary  |
+| POST   | /ask         | Ask question |
 
+---
 
-# 🧠 Technologies Used
+## 🧠 Technologies Used
 
-## LangChain
-
-## FAISS
-
-## OpenRouter (gpt-4o-mini)
-
-## LangServe
-
-## FastAPI
-
-## Gradio
+- LangChain
+- FAISS
+- OpenRouter (gpt-4o-mini)
+- LangServe
+- FastAPI
+- Gradio
