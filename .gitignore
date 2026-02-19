@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.env
+
+# Virtualenv
+.venv/
+venv/
+env/
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# LangChain / FAISS indexes
+data/index/
