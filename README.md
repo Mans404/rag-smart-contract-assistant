@@ -76,14 +76,14 @@ TOP_K=5
 
 ### 🔹 Step 1: Start Backend (LangServe)
 ```bash
-python rag/langserve_backend.py
+python app/langserve_backend.py
 ```
 
 ### 🔹 Step 2: Start Frontend (Gradio)
 
 Open a new terminal and run:
 ```bash
-python app/gradio_frontend.py
+python gradio_frontend.py
 ```
 
 ---
@@ -115,4 +115,5 @@ python app/gradio_frontend.py
 - LangServe
 - FastAPI
 - Gradio
+
 
