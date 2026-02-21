@@ -76,7 +76,7 @@ TOP_K=5
 
 ### 🔹 Step 1: Start Backend (LangServe)
 ```bash
-python app/langserve_backend.py
+uvicorn app.langserve_backend:app --reload
 ```
 
 ### 🔹 Step 2: Start Frontend (Gradio)
@@ -115,5 +115,6 @@ python gradio_frontend.py
 - LangServe
 - FastAPI
 - Gradio
+
 
 
